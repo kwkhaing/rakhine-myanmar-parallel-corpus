@@ -1,127 +1,154 @@
 # 🌐 Rakhine – Myanmar Parallel Corpus
 
-This repository contains a parallel dataset for **Rakhine ↔ Myanmar language machine translation** and NLP research.
+This repository contains a parallel dataset for **Rakhine ↔ Myanmar machine translation** and Natural Language Processing (NLP) research.
 
-It is designed for:
-- Machine Translation (MT)
-- Language modeling
-- NLP research
-- Dialect analysis (Rakhine Burmese)
+## 🎯 Purpose
+
+This dataset is designed for:
+
+* Machine Translation (MT)
+* Language Modeling
+* NLP Research
+* Dialect Analysis (Rakhine and Standard Burmese)
+* Language Preservation
 
 ---
 
 # 📌 Project Overview
 
-Rakhine language is a major dialect/language variety in Myanmar, but digital language resources are still limited.
+The Rakhine language is a major language variety spoken in Rakhine State, Myanmar. However, digital language resources for Rakhine remain limited.
 
 This project aims to build:
-- 📚 Parallel sentence corpus (Rakhine ↔ Myanmar)
-- 🧠 Training data for AI translation models
-- 🔊 Future speech + text datasets
+
+* 📚 A parallel sentence corpus (Rakhine ↔ Myanmar)
+* 🧠 Training data for AI translation models
+* 🔊 Future speech and text datasets
+* 🌍 Open resources for Rakhine language technology
 
 ---
 
 # 📁 Dataset Structure
 
+```text
 rakhine-myanmar-parallel-corpus/
 │
 ├── data/
-│ ├── train.csv
-│ ├── dev.csv
-│ ├── test.csv
+│   ├── train.csv
+│   ├── dev.csv
+│   └── test.csv
 │
 ├── raw_data/
-│ ├── rakhine_text.txt
-│ ├── myanmar_text.txt
+│   ├── rakhine_text.txt
+│   └── myanmar_text.txt
 │
 ├── scripts/
-│ ├── align_sentences.py
-│ ├── clean_data.py
+│   ├── align_sentences.py
+│   └── clean_data.py
 │
 ├── README.md
 ├── LICENSE
-
+└── .gitignore
+```
 
 ---
 
 # 📊 Data Format
 
-## CSV format (parallel sentences)
+## CSV Format (Parallel Sentences)
 
-| rakhine | myanmar |
-|---------|---------|
+| rakhine       | myanmar       |
+| ------------- | ------------- |
 | ငါ စားပြီးပြီ | ငါ စားပြီးပြီ |
-| နင် ဇာလဲ | သင် ဘယ်မှာလဲ |
+| နင် ဇာလဲ      | သင် ဘယ်မှာလဲ  |
 
 ---
 
-# ⚙️ How to Build Dataset
+# ⚙️ How to Build the Dataset
 
-### 1. Prepare raw text files
-- `raw_data/rakhine_text.txt`
-- `raw_data/myanmar_text.txt`
+## 1. Prepare Raw Text Files
 
-### 2. Run alignment script
+Place the following files in the `raw_data/` directory:
+
+* `raw_data/rakhine_text.txt`
+* `raw_data/myanmar_text.txt`
+
+## 2. Run the Alignment Script
+
 ```bash
 python scripts/align_sentences.py
+```
 
----
+## 3. Generated Output
 
-### 3. Output generated:
+```text
 data/train.csv
+```
 
 ---
 
 # 🧠 Use Cases
-Neural Machine Translation (NMT)
-Chatbot training
-Dialect comparison (Rakhine vs Standard Burmese)
-Language preservation
+
+* Neural Machine Translation (NMT)
+* Chatbot Training
+* Rakhine–Myanmar Language Research
+* Dialect Comparison
+* Language Preservation
+* NLP Benchmark Development
 
 ---
 
 # 🚀 Future Improvements
-Add English translation layer (Rakhine ↔ Myanmar ↔ English)
-Add speech dataset (audio + transcription)
-Improve alignment using semantic similarity models
-Expand dataset to 10,000+ sentence pairs
+
+* Add an English translation layer (Rakhine ↔ Myanmar ↔ English)
+* Add speech datasets (audio + transcription)
+* Improve alignment using semantic similarity models
+* Expand the dataset to 10,000+ sentence pairs
+* Publish on Hugging Face Datasets
+* Create benchmark evaluation datasets
 
 ---
 
 # ⚠️ Limitations
-Initial dataset is rule-based aligned (line-by-line)
-Sentence quality depends on manual curation
-Advanced semantic alignment is recommended for large-scale training
+
+* The initial dataset uses rule-based sentence alignment (line-by-line).
+* Translation quality depends on manual curation.
+* Semantic alignment methods are recommended for large-scale datasets.
+* The dataset is currently limited in size and coverage.
 
 ---
 
 # 📜 License
 
-This dataset is intended for research and open-source NLP development.
+This dataset is intended for research, education, and open-source NLP development.
 
-Suggested license:
+Recommended license:
 
-Creative Commons Attribution 4.0 (CC BY 4.0)
+**Creative Commons Attribution 4.0 International (CC BY 4.0)**
 
 ---
 
 # 🤝 Contribution
 
-Contributions are welcome:
+Contributions are welcome.
 
-Add new sentence pairs
-Improve translations
-Fix alignment issues
-Add dialect variations
+You can help by:
+
+* Adding new sentence pairs
+* Improving translations
+* Fixing alignment issues
+* Adding dialect variations
+* Reporting errors
+* Expanding vocabulary coverage
 
 ---
 
 # 🌍 Goal
 
-To support digital preservation and AI development for the Rakhine language and its dialects.
+To support the digital preservation, research, and AI development of the Rakhine language and its dialects.
 
 ---
 
 # 📬 Contact
 
-If you are contributing to Rakhine NLP or language technology projects, collaboration is welcome.
+Researchers, developers, linguists, and community contributors interested in Rakhine NLP and language technology are welcome to collaborate.
+
