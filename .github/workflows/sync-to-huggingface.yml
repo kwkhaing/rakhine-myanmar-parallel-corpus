@@ -1,0 +1,48 @@
+name: Sync Dataset to Hugging Face
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+      - 'README.md'
+      - 'DATASET.md'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout GitHub Repository
+        uses: actions/checkout@v4
+
+      - name: Clone Hugging Face Dataset Repository
+        run: |
+          git clone https://rakhine-nlp:${{ secrets.HF_TOKEN }}@huggingface.co/datasets/rakhine-nlp/rakhine-myanmar-parallel-corpus hf
+
+      - name: Copy Files
+        run: |
+          mkdir -p hf/data
+
+          cp -r data/* hf/data/
+
+          if [ -f README.md ]; then
+            cp README.md hf/
+          fi
+
+      - name: Commit and Push
+        run: |
+          cd hf
+
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add .
+
+          git diff --cached --quiet && exit 0
+
+          git commit -m "Sync from GitHub"
+
+          git push
